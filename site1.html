@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- ========================================== -->
+<!-- БУРГЕР-МЕНЮ (для мобильных)                -->
+<!-- ========================================== -->
+<input type="checkbox" id="burger-toggle" class="burger-toggle">
+<label for="burger-toggle" class="burger-label">☰ Меню</label>
+
+    <!-- ========================================== -->
+    <!-- НАВИГАЦИЯ С КНОПКОЙ ВОЙТИ                  -->
+    <!-- ========================================== -->
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li><a href="site1.html">Главная</a></li>
+            <li><a href="Товары.html">Игры</a></li>
+            <li><a href="Контакты.html">Контакты</a></li>
+            <li><a href="records.html">Рекорды</a></li>
+            <li><a href="admin.html">Административная панель</a></li>
+        </ul>
+
+        <!-- Кнопка "Войти" (показывается, если не авторизован) -->
+        <button id="login-btn" class="login-btn">Войти</button>
+
+        <!-- Профиль пользователя (показывается, если авторизован) -->
+        <div id="user-menu" class="user-menu" style="display: none;">
+            <span id="user-display-name" class="user-name">Пользователь</span>
+            <button id="logout-btn" class="logout-btn-small">Выйти</button>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- МОДАЛЬНОЕ ОКНО АУТЕНТИФИКАЦИИ              -->
+    <!-- ========================================== -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-modal-window">
+
+            <!-- Кнопка закрытия -->
+            <button class="modal-close" id="modal-close">✕</button>
+
+            <!-- Заголовок -->
+            <h2 class="auth-title">🔐 Добро пожаловать!</h2>
+
+            <!-- Вкладки -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Вход</button>
+                <button class="auth-tab" data-tab="register">Регистрация</button>
+            </div>
+
+            <!-- Форма входа -->
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Пароль:</label>
+                    <input type="password" id="login-password" placeholder="••••••" required>
+                </div>
+                <button type="submit" class="auth-btn">Войти</button>
+            </form>
+
+            <!-- Форма регистрации -->
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="register-name">Имя:</label>
+                    <input type="text" id="register-name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Пароль (мин. 6 символов):</label>
+                    <input type="password" id="register-password" placeholder="••••••" minlength="6" required>
+                </div>
+                <button type="submit" class="auth-btn">Зарегистрироваться</button>
+            </form>
+
+        </div>
+    </div>
+    <h1 style="color: brown;">Привет, это мой перый сайт</h1>
+    <h2>Эта строчка меньше предыдущей</h2>
+    <h3>Эта строчка меньше предыдущей</h3>
+    <h4>Эта строчка меньше предыдущей</h4>
+    <h5>Эта строчка меньше предыдущей</h5>
+    <h6>Эта строчка меньше предыдущей</h6>
+    <p>Это начало абзаца</p>
+    <a href="C:\Users\edu-msk22-625s\Desktop\Сайт1\site2.html">Ссылка на вторую страницу</a>
+
+    <p><img src="https://sys3.ru/synergyuniversity-ru/mediacenter/symbolism/ru_3.png" width="150" height="100"></p>
+
+
+    <ol>
+        <li>1 курс</li>
+        <li>2 курс</li>
+        <li>3 курс</li>
+        <li>4 курс</li>
+    </ol>
+    <b>Жирный</b>
+
+
+    <!-- ========================================== -->
+    <!-- ПАНЕЛЬ ПОИСКА И ФИЛЬТРОВ                    -->
+    <!-- ========================================== -->
+    <section class="filters-section">
+        <h2>🔍 Поиск и фильтры</h2>
+
+        <div class="filters-grid">
+            <div class="filter-group">
+                <label for="search-input">Поиск по названию:</label>
+                <input type="text" id="search-input" placeholder="Введите название...">
+            </div>
+
+            <div class="filter-group">
+                <label for="genre-filter">Жанр:</label>
+                <select id="genre-filter">
+                    <option value="">Все жанры</option>
+                    <option value="RPG">RPG</option>
+                    <option value="MOBA">MOBA</option>
+                    <option value="Battle Royale">Battle Royale</option>
+                    <option value="Шутер">Шутер</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="rating-filter">Мин. рейтинг:</label>
+                <input type="number" id="rating-filter" min="0" max="10" step="0.5" placeholder="0">
+            </div>
+
+            <div class="filter-group">
+                <label for="sort-filter">Сортировка:</label>
+                <select id="sort-filter">
+                    <option value="default">По умолчанию</option>
+                    <option value="rating-desc">Рейтинг ↓</option>
+                    <option value="rating-asc">Рейтинг ↑</option>
+                    <option value="title-asc">Название А-Я</option>
+                    <option value="title-desc">Название Я-А</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filters-actions">
+            <button id="reset-filters" class="reset-btn">🔄 Сбросить фильтры</button>
+            <span id="results-count" class="results-count">Найдено: 0</span>
+        </div>
+    </section>
+
+
+
+    <!-- БЛОК С КАРТОЧКАМИ ИГР (данные из Firestore) -->
+    <!-- ========================================== -->
+    <h2>🎮 Наши игры</h2>
+
+    <!-- Сюда JavaScript будет добавлять карточки -->
+    <div class="card-container" id="games-container">
+        <p id="loading">Загрузка игр...</p>
+    </div>
+
+    <div id="add-game-wrapper" style="display: none;">
+        <h2>➕ Добавить новую игру</h2>
+
+        <form id="add-game-form">
+
+            <!-- Название -->
+            <div class="form-group">
+                <label for="title">Название игры:</label>
+                <input type="text" id="title" placeholder="Например: Cyberpunk 2077" required>
+            </div>
+
+            <!-- Жанр -->
+            <div class="form-group">
+                <label for="genre">Жанр:</label>
+                <input type="text" id="genre" placeholder="Например: RPG" required>
+            </div>
+
+            <!-- Рейтинг -->
+            <div class="form-group">
+                <label for="rating">Рейтинг (0-10):</label>
+                <input type="number" id="rating" min="0" max="10" step="0.1" placeholder="9.5" required>
+            </div>
+
+            <!-- Ссылка на картинку -->
+            <div class="form-group">
+                <label for="imageUrl">Ссылка на картинку:</label>
+                <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg">
+            </div>
+
+            <!-- Кнопка -->
+            <button type="submit" class="submit-btn">Сохранить игру</button>
+
+        </form>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ РЕДАКТИРОВАНИЯ          -->
+    <!-- ========================================== -->
+    <div class="modal-overlay" id="edit-modal">
+        <div class="modal-window">
+            <h2>✏️ Редактировать игру</h2>
+
+            <form id="edit-form">
+                <!-- Скрытое поле для ID документа -->
+                <input type="hidden" id="edit-id">
+
+                <div class="form-group">
+                    <label for="edit-title">Название игры:</label>
+                    <input type="text" id="edit-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-genre">Жанр:</label>
+                    <input type="text" id="edit-genre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-rating">Рейтинг (0-10):</label>
+                    <input type="number" id="edit-rating" min="0" max="10" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-imageUrl">Ссылка на картинку:</label>
+                    <input type="url" id="edit-imageUrl">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancel-edit">Отмена</button>
+                    <button type="submit" class="save-btn">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Подключаем JavaScript -->
+    <script src="js/script.js"></script>
+
+
+    <script type="module">
+        // 1. Импортируем модули Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js';
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js';
+
+        // 2. ⚠️ ВСТАВЬ СВОЙ КОНФИГ ИЗ FIREBASE!
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpcvYtmjclljZZT6tjMg7nG9GC63Em6Bc",
+            authDomain: "site1-9e3f1.firebaseapp.com",
+            projectId: "site1-9e3f1",
+            storageBucket: "site1-9e3f1.firebasestorage.app",
+            messagingSenderId: "484791968144",
+            appId: "1:484791968144:web:ab3cbd2b1471d8e9909315",
+            measurementId: "G-52F8YT0ZLM"
+        };
+
+        // 3. Инициализация Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+        const analytics = getAnalytics(app);
+
+        // 4. ПРОВЕРКА ПОДКЛЮЧЕНИЯ (ЗАДАЧА №5)
+        console.log('✅ Firebase подключен!');
+        console.log('📊 Project ID:', firebaseConfig.projectId);
+        console.log('🔥 Firestore готов к работе!');
+        console.log('🔐 Auth готов!');
+
+        // Делаем db доступной глобально (для отладки)
+        window.firebaseConfig = firebaseConfig;
+        window.db = db;
+        window.auth = auth;
+        window.firebaseReady = true;
+
+
+    </script>
+
+</body>
+
+</html>
